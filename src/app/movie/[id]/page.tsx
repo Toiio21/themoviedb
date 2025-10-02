@@ -16,6 +16,7 @@ import { movieApi, getBackdropUrl, getPosterUrl } from "@/services/api";
 import { MovieDetails } from "@/types/movie";
 import { Loader2 } from "lucide-react";
 import MovieImage from "@/components/MovieImage";
+import MovieBackdrop from "@/components/MovieBackdrop";
 
 export default function MovieDetailPage() {
   const params = useParams();
@@ -101,27 +102,12 @@ export default function MovieDetailPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {movie.backdrop_path && (
-        <div className="relative h-96 lg:h-[500px] overflow-hidden">
-          <MovieImage
-            src={getBackdropUrl(movie.backdrop_path)}
-            alt={movie.title}
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50" />
-
-          <div className="absolute top-4 left-4 z-10">
-            <button
-              onClick={() => router.back()}
-              className="bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-colors"
-            >
-              <ArrowLeft className="w-6 h-6" />
-            </button>
-          </div>
-        </div>
-      )}
+      <MovieBackdrop
+        backdropSrc={getBackdropUrl(movie.backdrop_path)}
+        posterSrc={getPosterUrl(movie.poster_path)}
+        title={movie.title}
+        onBackClick={() => router.back()}
+      />
 
       <div className="container mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
@@ -140,9 +126,6 @@ export default function MovieDetailPage() {
 
             <div className="p-6 lg:p-8 flex-1">
               <div className="mb-6">
-                <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-                  {movie.title}
-                </h1>
                 {movie.tagline && (
                   <p className="text-lg text-gray-600 italic mb-4">
                     "{movie.tagline}"

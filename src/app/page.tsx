@@ -5,6 +5,7 @@ import SearchBar from "@/components/SearchBar";
 import GenreFilter from "@/components/GenreFilter";
 import MovieList from "@/components/MovieList";
 import ImageToggle from "@/components/ImageToggle";
+import GradientTest from "@/components/GradientTest";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         </div>
 
         <div className="container mx-auto px-4 py-8">
+          <GradientTest />
           <MovieList />
         </div>
       </div>
