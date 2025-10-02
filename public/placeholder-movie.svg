@@ -1,26 +1,17 @@
 <svg width="500" height="750" viewBox="0 0 500 750" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="500" height="750" fill="#f3f4f6"/>
-  <rect x="50" y="100" width="400" height="550" rx="8" fill="#e5e7eb"/>
+  <rect width="500" height="750" fill="#f8f9fa"/>
   
-  <!-- Film icon -->
-  <rect x="180" y="250" width="140" height="200" rx="4" fill="#9ca3af"/>
-  <rect x="180" y="250" width="140" height="200" rx="4" stroke="#6b7280" stroke-width="2" fill="none"/>
+  <rect x="75" y="125" width="350" height="500" rx="12" fill="#e9ecef"/>
   
-  <!-- Play button -->
-  <circle cx="250" cy="350" r="25" fill="#9ca3af"/>
-  <path d="M240 340L240 360L260 350Z" fill="white"/>
+  <rect x="150" y="250" width="200" height="250" rx="8" fill="#dee2e6"/>
   
-  <!-- Text -->
-  <text x="250" y="500" text-anchor="middle" fill="#6b7280" font-family="system-ui, sans-serif" font-size="16" font-weight="500">
-    Изображение недоступно
+  <circle cx="250" cy="375" r="40" fill="#adb5bd"/>
+  <path d="M235 360L235 390L275 375Z" fill="white"/>
+  
+  <text x="250" y="550" text-anchor="middle" fill="#6c757d" font-family="system-ui, sans-serif" font-size="18" font-weight="500">
+    Нет изображения
   </text>
-  <text x="250" y="525" text-anchor="middle" fill="#9ca3af" font-family="system-ui, sans-serif" font-size="14">
-    Попробуйте позже
+  <text x="250" y="580" text-anchor="middle" fill="#adb5bd" font-family="system-ui, sans-serif" font-size="14">
+    Заглушка
   </text>
-  
-  <!-- Decorative elements -->
-  <circle cx="100" cy="150" r="3" fill="#d1d5db"/>
-  <circle cx="400" cy="150" r="3" fill="#d1d5db"/>
-  <circle cx="100" cy="600" r="3" fill="#d1d5db"/>
-  <circle cx="400" cy="600" r="3" fill="#d1d5db"/>
 </svg>

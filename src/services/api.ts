@@ -80,7 +80,18 @@ export const movieApi = {
 };
 
 export const getImageUrl = (path: string | null, size: 'w500' | 'original' = 'w500'): string => {
-  return '/placeholder-movie.svg';
+  if (!path) {
+    return '/placeholder-movie.svg';
+  }
+  
+  if (typeof window !== 'undefined') {
+    const usePlaceholders = localStorage.getItem("usePlaceholders");
+    if (usePlaceholders === 'true') {
+      return '/placeholder-movie.svg';
+    }
+  }
+  
+  return `${IMAGE_BASE_URL}/${size}${path}`;
 };
 
 export const getPosterUrl = (path: string | null): string => {

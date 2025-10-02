@@ -4,6 +4,7 @@ import { MovieProvider } from "@/context/MovieContext";
 import SearchBar from "@/components/SearchBar";
 import GenreFilter from "@/components/GenreFilter";
 import MovieList from "@/components/MovieList";
+import ImageToggle from "@/components/ImageToggle";
 
 export default function Home() {
   return (
@@ -15,9 +16,10 @@ export default function Home() {
               <h1 className="text-4xl font-bold text-gray-900 mb-2">
                 Поиск фильмов
               </h1>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-gray-600 mb-4">
                 Найдите информацию о любом фильме с помощью The Movie Database
               </p>
+              <ImageToggle />
             </div>
 
             <SearchBar />
