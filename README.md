@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Приложение для поиска фильмов
 
-## Getting Started
+Веб-приложение для поиска и отображения информации о фильмах с использованием API The Movie Database (TMDb).
 
-First, run the development server:
+## Функциональность
+
+### Основные возможности:
+
+- Поиск фильмов по названию
+- Отображение результатов поиска с постерами, описанием и рейтингом
+- Бесконечная подгрузка (пагинация)
+- Детальная страница фильма с дополнительной информацией
+- Фильтрация по жанрам
+- Адаптивная верстка
+- Обработка ошибок и лоадеры
+- Русская локализация
+
+### Технологический стек:
+
+- **Frontend**: Next.js 15, React 18, TypeScript
+- **Стилизация**: Tailwind CSS
+- **Управление состоянием**: Context API + useReducer
+- **HTTP клиент**: Axios
+- **Иконки**: Lucide React
+- **API**: The Movie Database (TMDb)
+
+## Установка и запуск
+
+1. Клонируйте репозиторий:
+
+```bash
+git clone <repository-url>
+cd test-app-kino
+```
+
+2. Установите зависимости:
+
+```bash
+npm install
+```
+
+3. Запустите приложение в режиме разработки:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Откройте [http://localhost:3000](http://localhost:3000) в браузере.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Структура проекта
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── movie/[id]/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+├── components/
+│   ├── SearchBar.tsx
+│   ├── MovieCard.tsx
+│   ├── MovieList.tsx
+│   └── GenreFilter.tsx
+├── context/
+│   └── MovieContext.tsx
+├── services/
+│   └── api.ts
+└── types/
+    └── movie.ts
+```
 
-## Learn More
+## Основные компоненты
 
-To learn more about Next.js, take a look at the following resources:
+### SearchBar
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Поиск фильмов по названию
+- Очистка поискового запроса
+- Отображение количества найденных результатов
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### MovieList
 
-## Deploy on Vercel
+- Отображение списка фильмов в виде сетки
+- Бесконечная подгрузка при скролле
+- Обработка состояний загрузки и ошибок
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### MovieCard
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Карточка фильма с постером, названием, описанием и рейтингом
+- Ссылка на детальную страницу
+- Адаптивное отображение
+
+### GenreFilter
+
+- Фильтрация фильмов по жанрам
+- Кнопка "Все жанры" для сброса фильтра
+
+## API интеграция
+
+Приложение использует The Movie Database (TMDb) API:
+
+- **Поиск фильмов**: `/search/movie`
+- **Популярные фильмы**: `/movie/popular`
+- **Детали фильма**: `/movie/{id}`
+- **Жанры**: `/genre/movie/list`
+- **Фильмы по жанру**: `/discover/movie`
+
+## Дизайн и UX
+
+- Современный и чистый интерфейс
+- Адаптивная верстка для всех устройств
+- Плавные анимации и переходы
+- Интуитивно понятная навигация
+- Обработка состояний загрузки и ошибок
+
+## Адаптивность
+
+Приложение полностью адаптивно и корректно работает на:
+
+- Десктопах (1200px+)
+- Планшетах (768px - 1199px)
+- Мобильных устройствах (до 767px)
+
+## Локализация
+
+- Интерфейс на русском языке
+- Данные фильмов на русском языке (при доступности)
+- Форматирование дат и чисел в соответствии с русской локалью
+
+## Деплой
+
+Для деплоя приложения:
+
+1. Соберите проект:
+
+```bash
+npm run build
+```
+
+2. Запустите в production режиме:
+
+```bash
+npm start
+```

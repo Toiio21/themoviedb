@@ -1,0 +1,26 @@
+<svg width="500" height="750" viewBox="0 0 500 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="750" fill="#f3f4f6"/>
+  <rect x="50" y="100" width="400" height="550" rx="8" fill="#e5e7eb"/>
+  
+  <!-- Film icon -->
+  <rect x="180" y="250" width="140" height="200" rx="4" fill="#9ca3af"/>
+  <rect x="180" y="250" width="140" height="200" rx="4" stroke="#6b7280" stroke-width="2" fill="none"/>
+  
+  <!-- Play button -->
+  <circle cx="250" cy="350" r="25" fill="#9ca3af"/>
+  <path d="M240 340L240 360L260 350Z" fill="white"/>
+  
+  <!-- Text -->
+  <text x="250" y="500" text-anchor="middle" fill="#6b7280" font-family="system-ui, sans-serif" font-size="16" font-weight="500">
+    Изображение недоступно
+  </text>
+  <text x="250" y="525" text-anchor="middle" fill="#9ca3af" font-family="system-ui, sans-serif" font-size="14">
+    Попробуйте позже
+  </text>
+  
+  <!-- Decorative elements -->
+  <circle cx="100" cy="150" r="3" fill="#d1d5db"/>
+  <circle cx="400" cy="150" r="3" fill="#d1d5db"/>
+  <circle cx="100" cy="600" r="3" fill="#d1d5db"/>
+  <circle cx="400" cy="600" r="3" fill="#d1d5db"/>
+</svg>
